@@ -36,7 +36,6 @@ public class TemperatureController {
                 sseEmitter.send(temperature, MediaType.APPLICATION_JSON);
             }catch (Exception ignore) {
                 deadEmitters.add(sseEmitter);
-                System.out.println(sseEmitter.toString());
             }
         });
         clients.removeAll(deadEmitters);
